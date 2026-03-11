@@ -1,6 +1,6 @@
 import app from '../relay/server.js';
 
-export const config = { runtime: 'nodejs20' };
+export const config = { runtime: 'nodejs' };
 
 export default function handler(req, res) {
   // Rewrite sends /api/* to /api/relay/$1; restore path so Express sees /api/channels etc.
