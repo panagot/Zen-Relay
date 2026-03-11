@@ -290,6 +290,11 @@ export default function App() {
             How to use
           </button>
         </div>
+        <footer className={styles.sidebarFooter}>
+          <a href="https://github.com/panagot/Zen-Relay" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>Zen Relay</a>
+          <span className={styles.footerSep}>·</span>
+          <span className={styles.footerTag}>Horizen Genesis</span>
+        </footer>
       </aside>
       <main className={styles.main}>
         {showInstructions ? (
