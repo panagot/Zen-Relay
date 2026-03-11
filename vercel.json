@@ -1,7 +1,7 @@
 {
   "outputDirectory": "client/dist",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/relay/$1" },
+    { "source": "/api/(.*)", "destination": "/api/relay?path=$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

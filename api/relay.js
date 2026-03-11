@@ -3,10 +3,8 @@ import app from '../relay/server.js';
 export const config = { runtime: 'nodejs' };
 
 export default function handler(req, res) {
-  // Rewrite sends /api/* to /api/relay/$1; restore path so Express sees /api/channels etc.
-  const u = req.url || '';
-  if (u.startsWith('/api/relay')) {
-    req.url = '/api' + (u.slice('/api/relay'.length) || '') || '/api';
-  }
+  // Rewrite sends /api/* to /api/relay?path=$1 so this function is always hit; restore path for Express.
+  const path = (req.query && req.query.path) || '';
+  req.url = path ? '/api/' + path : '/api';
   return app(req, res);
 }
