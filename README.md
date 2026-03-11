@@ -39,7 +39,7 @@ Deploy from the **repo root**. One Vercel project serves both the static client 
 2. Leave **Root Directory** empty (repo root).
 3. **Build Command:** `npm run build` (default).
 4. **Output Directory:** overridden by `vercel.json` to `client/dist`.
-5. Deploy. The app and API will be live at your Vercel URL. No need to set `VITE_API_URL` — the client uses the same origin for `/api/*`.
+5. Deploy. The app and API will be live at the project's Vercel URL. No need to set `VITE_API_URL` — the client uses the same origin for `/api/*`.
 
 **Note:** The serverless API uses in-memory state (same as the local relay). Data can persist for a while on a warm instance but is not guaranteed across cold starts or regions. For production persistence, add a store (e.g. Vercel KV, Upstash Redis) later. For demos and testing, the all-on-Vercel setup is enough.
 
@@ -49,13 +49,11 @@ Deploy from the **repo root**. One Vercel project serves both the static client 
 
 ## Submission & funding (Genesis)
 
-**Ask:** **$20,000** total, disbursed per program: **10%** at approval (application requirements), **20%** at M1 (45 days), **30%** at M2 (90 days), **40%** at M3 (150 days). See **Application — copy for form** below.
+**Ask:** **$20,000** total, disbursed per program: **10%** at approval (application requirements), **20%** at M1 (45 days), **30%** at M2 (90 days), **40%** at M3 (150 days). See **Application summary** below.
 
 ---
 
-## Application — copy for form ($20K ask)
-
-Use these when filling out the Horizen Genesis application. Replace `YOUR_VERCEL_URL` if different.
+## Application summary
 
 **Project name:**  
 Zen Relay
@@ -89,8 +87,7 @@ Horizen testnet/mainnet deployment and hosting; ZK circuit and integration; Hori
 Zen Relay fits “encrypted communication protocols” on a privacy-first chain. Horizen’s EVM L3 and compliance layer allow us to build private coordination for DAOs and communities with optional on-chain access rules and ZEN payments, while keeping message content and membership proofs confidential.
 
 **Live demo:**  
-https://zen-relay.vercel.app/  
-(Replace with your Vercel URL if different.)
+https://zen-relay.vercel.app/
 
 **Repository:**  
 https://github.com/panagot/Zen-Relay
