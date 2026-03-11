@@ -135,6 +135,10 @@ app.get('/api/channels/:id/messages', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Relay http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Relay http://localhost:${PORT}`);
+  });
+}
+
+export default app;
