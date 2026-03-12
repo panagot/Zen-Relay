@@ -1,0 +1,16 @@
+{
+  "name": "zen-relay-zk-demo",
+  "private": true,
+  "description": "Minimal ZK proof demo for Zen Relay — preimage and Merkle path circuits (Circom + snarkjs)",
+  "scripts": {
+    "build:preimage": "circom preimage.circom -l node_modules/circomlib/circuits --r1cs --wasm -o build/preimage",
+    "setup:preimage": "snarkjs groth16 setup build/preimage/preimage.r1cs pot12_final.ptau build/preimage/preimage_0000.zkey && snarkjs zkey contribute build/preimage/preimage_0000.zkey build/preimage/preimage_final.zkey --name=\"Zen Relay demo\" -v",
+    "prove:preimage": "node prove_preimage.js",
+    "verify:preimage": "node verify_preimage.js",
+    "verify": "node verify_preimage.js"
+  },
+  "dependencies": {
+    "circomlib": "^2.0.5",
+    "snarkjs": "^0.7.0"
+  }
+}

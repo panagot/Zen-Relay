@@ -4,13 +4,14 @@ Private channels with end-to-end encryption and access rules (allowlist, min bal
 
 ---
 
-## For Horizen Genesis reviewers
+## Summary
 
 - **Category:** Anonymous Infrastructure — **encrypted communication protocols**
 - **What’s built:** React frontend + Node relay. E2E encryption (AES-GCM in browser); channel access rules: allowlist (Merkle proof verified on relay), min token balance, hold NFT (rules stored; on-chain checks can be added). Invite links carry the decryption key; relay never sees plaintext or keys.
 - **ZEN utility (roadmap):** Pay ZEN to create channels or premium features; staking ZEN for relayers; ZEN for premium storage; optional on-chain access rule contract on Horizen with ZEN fee for channel creation.
 - **Traction path:** 250+ → 500+ unique wallets; 10K+ → 20K+ transactions (join, send, prove access).
 - **Next steps with grant:** Deploy on Horizen testnet/mainnet; add ZK membership proof so relay never sees address; optional Horizen contract for channel creation and access rules; ZEN payments and staking.
+- **ZK proof:** Design doc and minimal ZK demo in the repo: **[docs/ZK-MEMBERSHIP-DESIGN.md](docs/ZK-MEMBERSHIP-DESIGN.md)** (statement, public/private inputs, integration with Zen Relay) and **[zk-demo/](zk-demo/)** (Circom 2 circuits: preimage proof + Merkle path membership, plus snarkjs verification script). This shows we can implement the same pattern for production (relay verifies proof without seeing member address).
 
 ---
 
@@ -91,6 +92,8 @@ https://zen-relay.vercel.app/
 
 **Repository:**  
 https://github.com/panagot/Zen-Relay
+
+**ZK proof:** Design and minimal demo in repo: [docs/ZK-MEMBERSHIP-DESIGN.md](docs/ZK-MEMBERSHIP-DESIGN.md) (statement, inputs, integration) and [zk-demo/](zk-demo/) (Circom 2 preimage + Merkle path circuits, snarkjs verification). Same pattern will be used for production (relay verifies proof without seeing address).
 
 **ZEN utility:**  
 Pay ZEN to create channels or premium features; staking ZEN for relayers; ZEN for premium storage; optional on-chain channel creation fee. Drives demand for ZEN and aligns with Horizen’s privacy and infrastructure goals.
